@@ -1,0 +1,23 @@
+{
+  "name": "browser-extension-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build:chrome": "vite build --config vite.chrome.config.ts",
+    "build:firefox": "vite build --config vite.firefox.config.ts",
+    "dev:chrome": "vite build --mode development --watch -c vite.chrome.config.ts",
+    "dev:firefox": "vite build --mode development --watch -c vite.firefox.config.ts",
+    "build": "npm run build:chrome && npm run build:firefox",
+    "dev": "concurrently \"npm run dev:chrome\" \"npm run dev:firefox\""
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "concurrently": "^9.1.2",
+    "vite": "^6.1.0",
+    "webextension-polyfill": "^0.10.0"
+  }
+}
